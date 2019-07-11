@@ -1,10 +1,4 @@
 ---
 - hosts: all
   roles:
-    - ../roles/vim
-  tasks:
-    - name: Install useful packages
-      apt:
-        update_cache: true
-        state: present
-        name: ['bash-completion', 'colordiff', 'curl', 'less']
+    - ../roles/common

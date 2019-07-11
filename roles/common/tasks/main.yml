@@ -1,8 +1,8 @@
 ---
-- name: Install Vim
+- name: Install useful packages
   apt:
     update_cache: true
-    name: vim
+    name: ['bash-completion', 'colordiff', 'curl', 'less', 'vim']
 
 - name: Set Vim as default editor
   alternatives:
