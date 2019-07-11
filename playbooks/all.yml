@@ -6,3 +6,7 @@
         update_cache: true
         state: present
         name: ['bash-completion', 'colordiff', 'curl', 'less', 'vim']
+    - name: Set Vim as default editor
+      alternatives:
+        name: editor
+        path: /usr/bin/vim.basic
