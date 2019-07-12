@@ -22,10 +22,14 @@
       - patch
       - zlib1g-dev
 
-- name: Create application directory
+- name: Create application directories
   file:
     state: directory
-    path: '/opt/partynest'
+    path: '{{ item }}'
     mode: 'u=rwx,g=rwx,o=rx'
     owner: partynest
     group: partynest
+  with_items:
+    - '/opt/partynest'
+    - '/opt/partynest/shared'
+    - '/opt/partynest/shared/config'
