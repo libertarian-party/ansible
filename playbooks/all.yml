@@ -9,3 +9,5 @@
       tags: [nginx]
     - role: ../roles/redis
       tags: [redis]
+    - role: ../roles/postgresql
+      tags: [postgresql]
