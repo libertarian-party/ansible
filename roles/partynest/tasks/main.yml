@@ -10,6 +10,11 @@
       - patch
       - zlib1g-dev
 
+- name: Create RVM gemset
+  shell: "/bin/bash --login -c 'rvm use ruby-2.6.2@partynest --create'"
+  register: gemset_result
+  changed_when: "gemset_result.stdout is search('ruby-2.6.2 - #gemset created ')"
+
 - name: Create system group
   group:
     name: partynest
