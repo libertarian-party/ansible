@@ -30,9 +30,9 @@
 
 - name: Obtain Let's Encrypt certificate
   command: 'certbot certonly'
-  register: certbot_result
-  changed_when: "certbot_result.stdout is not search('Certificate not yet due for renewal; no action taken.')"
+  register: certbot__result
+  changed_when: "certbot__result.stdout is not search('Certificate not yet due for renewal; no action taken.')"
 
 - name: Display Certbot output
   debug:
-    var: certbot_result
+    var: certbot__result
