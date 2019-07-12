@@ -15,6 +15,22 @@
   register: gemset_result
   changed_when: "gemset_result.stdout is search('ruby-2.6.2 - #gemset created ')"
 
+- name: Check Bundler
+  shell: >
+    /bin/bash --login -c
+    "rvm ruby-2.6.2@partynest do
+    gem info bundler --installed --version '~> 2.0'"
+    || true
+  register: bundler_result
+  changed_when: false
+
+- name: Install Bundler
+  shell: >
+    /bin/bash --login -c
+    "rvm ruby-2.6.2@partynest do
+    gem install bundler -v '~> 2.0'"
+  when: "bundler_result.stdout is search('false')"
+
 - name: Create system group
   group:
     name: partynest
