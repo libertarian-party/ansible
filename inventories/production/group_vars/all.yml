@@ -1,4 +1,4 @@
 ---
-postgresql_user: partynest
 postgresql_db: partynest_production
+postgresql_user: partynest
 postgresql_password: password
