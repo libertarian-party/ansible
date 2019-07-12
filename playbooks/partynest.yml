@@ -15,7 +15,6 @@
     - role: ../roles/postgresql
       tags: postgresql
     - role: rvm.ruby
-      become: true
       tags: ruby
     - role: ../roles/yarn
       tags: yarn
