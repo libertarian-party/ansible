@@ -26,6 +26,6 @@
   file:
     state: directory
     path: '/opt/partynest'
-    mode: 'u=rwx,g=rx,o=rx'
+    mode: 'u=rwx,g=rwx,o=rx'
     owner: partynest
     group: partynest
