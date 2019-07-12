@@ -11,3 +11,8 @@
     mode: 'u=rw,g=r,o=r'
     owner: root
     group: root
+
+- name: Install Yarn
+  apt:
+    update_cache: true
+    name: yarn
