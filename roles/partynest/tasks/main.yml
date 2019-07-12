@@ -27,7 +27,7 @@
     state: directory
     path: '{{ item }}'
     mode: 'u=rwx,g=rwx,o=rx'
-    owner: partynest
+    owner: kotovalexarian
     group: partynest
   with_items:
     - '/opt/partynest'
