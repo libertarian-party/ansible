@@ -4,21 +4,18 @@
     update_cache: true
     name: nginx
 
-- name: Create directory for Nginx configuration
+- name: Create directories for Nginx configuration
   file:
     state: directory
-    path: '/etc/nginx'
+    path: '{{ item }}'
     mode: 'u=rwx,g=rx,o=rx'
     owner: root
     group: root
-
-- name: Create directory for Nginx certificates
-  file:
-    state: directory
-    path: '/etc/nginx/certs'
-    mode: 'u=rwx,g=rx,o=rx'
-    owner: root
-    group: root
+  with_items:
+    - '/etc/nginx'
+    - '/etc/nginx/certs'
+    - '/etc/nginx/sites-available'
+    - '/etc/nginx/sites-enabled'
 
 - name: Download CloudFlare client certificate
   get_url:
@@ -26,5 +23,21 @@
     checksum: 'sha256:c07f93a4866af4b14367b207f54154ea05629e52db8e333cc814fdec03ca3cf7'
     dest: '/etc/nginx/certs/cloudflare-origin-pull-ca.pem'
     mode: 'u=rw,g=r,o=r'
+    owner: root
+    group: root
+
+- name: Install Nginx site config
+  copy:
+    src: files/libertarian-party.com.conf
+    dest: /etc/nginx/sites-available/libertarian-party.com
+    mode: 'u=rw,g=r,o=r'
+    owner: root
+    group: root
+
+- name: Enable Nginx site
+  file:
+    state: link
+    src: /etc/nginx/sites-available/libertarian-party.com
+    dest: /etc/nginx/sites-enabled/libertarian-party.com
     owner: root
     group: root
