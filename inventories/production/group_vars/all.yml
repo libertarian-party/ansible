@@ -1,2 +1,3 @@
 ---
 postgresql_user: partynest
+postgresql_db: partynest_production
