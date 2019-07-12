@@ -48,7 +48,7 @@
     state: directory
     path: '{{ item }}'
     mode: 'u=rwx,g=rwxs,o=rx'
-    owner: kotovalexarian
+    owner: '{{ deploy_user }}'
     group: partynest
   with_items:
     - '/opt/partynest'
