@@ -34,7 +34,3 @@
   changed_when: >-
     certbot__result.stdout is
     not search('Certificate not yet due for renewal; no action taken.')
-
-- name: Display Certbot output
-  debug:
-    var: certbot__result
