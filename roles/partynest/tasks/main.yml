@@ -1,4 +1,16 @@
 ---
+- name: Create system group
+  group:
+    name: partynest
+    system: true
+
+- name: Create system user
+  user:
+    name: partynest
+    group: partynest
+    system: true
+    create_home: false
+
 - name: Install system packages
   apt:
     update_cache: true
