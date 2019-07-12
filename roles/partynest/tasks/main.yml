@@ -21,3 +21,11 @@
       - libpq-dev
       - patch
       - zlib1g-dev
+
+- name: Create application directory
+  file:
+    state: directory
+    path: '/opt/partynest'
+    mode: 'u=rwx,g=rx,o=rx'
+    owner: partynest
+    group: partynest
