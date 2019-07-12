@@ -80,6 +80,11 @@
     owner: root
     group: root
 
+- name: Obtain Let's Encrypt certificate
+  command: 'certbot certonly'
+  register: certbot_result
+  changed_when: "certbot_result is not search('Certificate not yet due for renewal; no action taken.')"
+
 - name: Create directory for Nginx configuration
   file:
     state: directory
