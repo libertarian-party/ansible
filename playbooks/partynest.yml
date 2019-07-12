@@ -26,6 +26,6 @@
     rvm1_rvm_check_for_updates: true
     rvm1_install_flags: '--auto-dotfiles'
     rvm1_install_path: '/usr/local/rvm'
-    rvm1_user: kotovalexarian
+    rvm1_user: root
     rvm1_rubies: ['ruby-2.6.2']
     rvm1_bundler_install: true
