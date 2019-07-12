@@ -1,6 +1,4 @@
 ---
 - hosts: all
   roles:
-    - ../roles/common
-    - ../roles/iptables
-    - ../roles/nginx
+    - ../roles/partynest

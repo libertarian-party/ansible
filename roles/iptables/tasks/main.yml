@@ -1,5 +1,0 @@
----
-- name: Install iptables
-  apt:
-    update_cache: true
-    name: iptables-persistent
