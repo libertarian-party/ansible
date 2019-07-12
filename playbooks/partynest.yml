@@ -16,6 +16,8 @@
       tags: postgresql
     - role: rvm.ruby
       tags: ruby
+    - role: ../roles/yarn
+      tags: yarn
     - role: ../roles/partynest
       tags: partynest
   vars:
