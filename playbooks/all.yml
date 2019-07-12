@@ -14,3 +14,5 @@
       tags: [redis]
     - role: ../roles/postgresql
       tags: [postgresql]
+    - role: ../roles/partynest
+      tags: [partynest]
