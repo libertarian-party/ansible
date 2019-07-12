@@ -47,7 +47,7 @@
   file:
     state: directory
     path: '{{ item }}'
-    mode: 'u=rwx,g=rwx,o=rx'
+    mode: 'u=rwx,g=rwxs,o=rx'
     owner: kotovalexarian
     group: partynest
   with_items:
