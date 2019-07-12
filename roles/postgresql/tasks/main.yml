@@ -3,3 +3,7 @@
   apt:
     update_cache: true
     name: postgresql-10
+
+- name: Create PostgreSQL database
+  postgresql_db:
+    name: partynest_production
