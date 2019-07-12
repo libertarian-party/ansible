@@ -4,8 +4,7 @@
     path: /etc/ssh/sshd_config
     regexp: '{{ item.regexp }}'
     line: '{{ item.line }}'
-  notify:
-    - Restart SSH daemon
+  notify: Restart SSH daemon
   with_items:
     - regexp: '^#?PermitRootLogin '
       line:   'PermitRootLogin no'
