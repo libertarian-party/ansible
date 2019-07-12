@@ -3,4 +3,4 @@
   roles:
     # - ../roles/common
     # - ../roles/certbot
-    - ../roles/partynest
+    - ../roles/nginx
