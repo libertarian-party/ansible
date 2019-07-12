@@ -80,6 +80,11 @@
     owner: root
     group: root
 
+- name: Install Nginx
+  apt:
+    update_cache: true
+    name: nginx
+
 - name: Obtain Let's Encrypt certificate
   command: 'certbot certonly'
   register: certbot_result
