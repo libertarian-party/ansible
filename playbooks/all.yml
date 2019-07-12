@@ -1,5 +1,6 @@
 ---
 - hosts: all
   roles:
+    - ../roles/common
     - ../roles/certbot
     - ../roles/partynest
