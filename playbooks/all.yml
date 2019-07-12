@@ -1,7 +1,11 @@
 ---
 - hosts: all
   roles:
-    # - ../roles/common
-    # - ../roles/certbot
-    - ../roles/nginx
-    - ../roles/redis
+    - role: ../roles/common
+      tags: [common]
+    - role: ../roles/certbot
+      tags: [certbot]
+    - role: ../roles/nginx
+      tags: [nginx]
+    - role: ../roles/redis
+      tags: [redis]
