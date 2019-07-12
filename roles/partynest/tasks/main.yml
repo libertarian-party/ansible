@@ -1,4 +1,15 @@
 ---
+- name: Install system packages
+  apt:
+    update_cache: true
+    name:
+      - build-essential
+      - gnupg2
+      - liblzma-dev
+      - libpq-dev
+      - patch
+      - zlib1g-dev
+
 - name: Create system group
   group:
     name: partynest
@@ -10,17 +21,6 @@
     group: partynest
     system: true
     create_home: false
-
-- name: Install system packages
-  apt:
-    update_cache: true
-    name:
-      - build-essential
-      - gnupg2
-      - liblzma-dev
-      - libpq-dev
-      - patch
-      - zlib1g-dev
 
 - name: Create application directories
   file:
