@@ -33,6 +33,7 @@
     mode: 'u=rw,g=r,o=r'
     owner: root
     group: root
+  notify: Restart Nginx
 
 - name: Enable Nginx site
   file:
@@ -41,3 +42,4 @@
     dest: /etc/nginx/sites-enabled/libertarian-party.com
     owner: root
     group: root
+  notify: Restart Nginx
