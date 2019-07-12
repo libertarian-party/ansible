@@ -16,4 +16,4 @@
   postgresql_user:
     db: '{{ postgresql_db }}'
     name: '{{ postgresql_user }}'
-    password: password
+    password: '{{ postgresql_password }}'
