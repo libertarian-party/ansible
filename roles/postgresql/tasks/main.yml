@@ -5,10 +5,14 @@
     name: ['postgresql-10', 'python3-psycopg2']
 
 - name: Create PostgreSQL database
+  become: true
+  become_user: postgres
   postgresql_db:
     name: partynest_production
 
 - name: Create PostgreSQL user
+  become: true
+  become_user: postgres
   postgresql_user:
     db: partynest_production
     name: partynest
