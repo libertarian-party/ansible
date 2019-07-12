@@ -51,6 +51,35 @@
     update_cache: true
     name: iptables-persistent
 
+- name: Add Certbot APT repository
+  copy:
+    src: files/certbot.list
+    dest: /etc/apt/sources.list.d/certbot.list
+    mode: 'u=rw,g=r,o=r'
+    owner: root
+    group: root
+
+- name: Install Certbot
+  apt:
+    update_cache: true
+    name: ['certbot', 'python-certbot-nginx']
+
+- name: Create directory for Let's Encrypt configuration
+  file:
+    state: directory
+    path: '/etc/letsencrypt'
+    mode: 'u=rwx,g=rx,o=rx'
+    owner: root
+    group: root
+
+- name: Install Let's Encrypt config
+  copy:
+    src: files/letsencrypt-cli.ini
+    dest: /etc/letsencrypt/cli.ini
+    mode: 'u=rw,g=r,o=r'
+    owner: root
+    group: root
+
 - name: Create directory for Nginx configuration
   file:
     state: directory
