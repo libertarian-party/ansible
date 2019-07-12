@@ -46,44 +46,10 @@
     owner: root
     group: root
 
-- name: Add Certbot APT repository
-  copy:
-    src: files/certbot.list
-    dest: /etc/apt/sources.list.d/certbot.list
-    mode: 'u=rw,g=r,o=r'
-    owner: root
-    group: root
-
-- name: Install Certbot
-  apt:
-    update_cache: true
-    name: certbot
-
-- name: Create directory for Let's Encrypt configuration
-  file:
-    state: directory
-    path: '/etc/letsencrypt'
-    mode: 'u=rwx,g=rx,o=rx'
-    owner: root
-    group: root
-
-- name: Install Let's Encrypt config
-  copy:
-    src: files/letsencrypt-cli.ini
-    dest: /etc/letsencrypt/cli.ini
-    mode: 'u=rw,g=r,o=r'
-    owner: root
-    group: root
-
 - name: Install Nginx
   apt:
     update_cache: true
     name: nginx
-
-- name: Obtain Let's Encrypt certificate
-  command: 'certbot certonly'
-  register: certbot_result
-  changed_when: "certbot_result.stdout is not search('Certificate not yet due for renewal; no action taken.')"
 
 - name: Create directory for Nginx configuration
   file:
