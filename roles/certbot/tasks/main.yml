@@ -21,8 +21,8 @@
     group: root
 
 - name: Install Let's Encrypt config
-  copy:
-    src: files/cli.ini
+  template:
+    src: templates/cli.ini
     dest: /etc/letsencrypt/cli.ini
     mode: 'u=rw,g=r,o=r'
     owner: root
