@@ -46,11 +46,6 @@
     owner: root
     group: root
 
-- name: Install iptables
-  apt:
-    update_cache: true
-    name: iptables-persistent
-
 - name: Add Certbot APT repository
   copy:
     src: files/certbot.list
