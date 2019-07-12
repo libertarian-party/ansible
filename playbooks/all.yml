@@ -4,3 +4,4 @@
     # - ../roles/common
     # - ../roles/certbot
     - ../roles/nginx
+    - ../roles/redis

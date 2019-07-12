@@ -1,0 +1,22 @@
+---
+- name: Install Redis server
+  apt:
+    update_cache: true
+    name: redis-server
+
+- name: Create directory for Redis configuration
+  file:
+    state: directory
+    path: '/etc/redis'
+    mode: 'u=rwx,g=rx,o=rx'
+    owner: root
+    group: root
+
+- name: Install Redis config
+  template:
+    src: templates/redis.conf
+    dest: '/etc/redis/redis.conf'
+    mode: 'u=rw,g=r,o='
+    owner: redis
+    group: redis
+  notify: Restart Redis server
