@@ -5,17 +5,17 @@
       force_apt_get: true
   roles:
     - role: ../roles/common
-      tags: [common]
+      tags: common
     - role: ../roles/certbot
-      tags: [certbot]
+      tags: certbot
     - role: ../roles/nginx
-      tags: [nginx]
+      tags: nginx
     - role: ../roles/redis
-      tags: [redis]
+      tags: redis
     - role: ../roles/postgresql
-      tags: [postgresql]
+      tags: postgresql
     - role: rvm.ruby
-      tags: [ruby]
+      tags: ruby
       vars:
         rvm1_rvm_version: stable
         rvm1_rvm_check_for_updates: true
@@ -25,4 +25,4 @@
         rvm1_rubies: ['ruby-2.6.2']
         rvm1_bundler_install: true
     - role: ../roles/partynest
-      tags: [partynest]
+      tags: partynest
