@@ -1,0 +1,6 @@
+---
+certbot__email: 'user@example.com'
+certbot__cert_name: 'example.com'
+certbot__cert_domains:
+  - 'example.com'
+  - 'www.example.com'
