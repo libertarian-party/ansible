@@ -16,6 +16,7 @@
     daemon_reload: true
     name: partynest-restart.path
     enabled: true
+    state: restarted
 
 - name: Update Partynest web service
   systemd:

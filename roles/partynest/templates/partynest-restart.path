@@ -1,5 +1,5 @@
 [Path]
-PathModified=/opt/partynest/current
+PathModified=/opt/partynest/revisions.log
 
 [Install]
 WantedBy=multi-user.target
