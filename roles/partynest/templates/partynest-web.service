@@ -1,7 +1,6 @@
 [Unit]
 After=network.target
-Before=partynest.service
-BindsTo=partynest.service
+PartOf=partynest.service
 Description={{ partynest__web_descr }}
 
 [Service]
