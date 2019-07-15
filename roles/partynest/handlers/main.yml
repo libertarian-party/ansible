@@ -1,0 +1,30 @@
+---
+- name: Update Partynest general service
+  systemd:
+    daemon_reload: true
+    name: partynest.service
+    enabled: true
+
+- name: Update Partynest restarter service
+  systemd:
+    daemon_reload: true
+    name: partynest-restart.service
+    enabled: false
+
+- name: Update Partynest restarter path
+  systemd:
+    daemon_reload: true
+    name: partynest-restart.path
+    enabled: true
+
+- name: Update Partynest web service
+  systemd:
+    daemon_reload: true
+    name: partynest-web.service
+    enabled: true
+
+- name: Update Partynest worker service
+  systemd:
+    daemon_reload: true
+    name: partynest-worker.service
+    enabled: true

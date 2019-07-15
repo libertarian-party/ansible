@@ -1,0 +1,5 @@
+[Path]
+PathModified=/opt/partynest/current
+
+[Install]
+WantedBy=multi-user.target
