@@ -28,3 +28,4 @@ certbot__cert_domains:
   # - 'www.libertarian-party.com'
 
 nginx__domain: 'libertarian-party.com'
+nginx__socket: '/opt/partynest/shared/tmp/sockets/puma.sock'
