@@ -5,6 +5,7 @@ BindsTo=partynest.service
 Description={{ partynest__web_descr }}
 
 [Service]
+Environment=BUNDLE_USER_HOME=/opt/partynest/shared/bundle
 ExecStart=/usr/local/rvm/bin/rvm ruby-2.6.2@partynest do bundle exec puma --environment production
 Group=partynest
 Restart=always
