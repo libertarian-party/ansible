@@ -26,3 +26,5 @@ certbot__cert_name: 'libertarian-party.com'
 certbot__cert_domains:
   - 'libertarian-party.com'
   # - 'www.libertarian-party.com'
+
+nginx__domain: 'libertarian-party.com'

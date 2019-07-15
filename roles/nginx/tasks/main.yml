@@ -27,8 +27,8 @@
     group: root
 
 - name: Install Nginx site config
-  copy:
-    src: files/libertarian-party.com.conf
+  template:
+    src: templates/libertarian-party.com.conf
     dest: /etc/nginx/sites-available/libertarian-party.com
     mode: 'u=rw,g=r,o=r'
     owner: root
