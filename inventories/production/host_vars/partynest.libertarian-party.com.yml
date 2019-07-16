@@ -19,8 +19,6 @@ private_ipv4_netmask: 255.255.0.0
 
 redis__requirepass: 'c06ef8526383e8e752f069d32f258e4d'
 
-deploy_user: kotovalexarian
-
 certbot__email: 'kotovalexarian@gmail.com'
 certbot__cert_name: 'libertarian-party.com'
 certbot__cert_domains:
