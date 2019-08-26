@@ -28,8 +28,8 @@
 
 - name: Install Nginx site config
   template:
-    src: templates/libertarian-party.com.conf
-    dest: /etc/nginx/sites-available/libertarian-party.com
+    src: templates/example.com.conf
+    dest: '/etc/nginx/sites-available/{{ nginx__domain }}'
     mode: 'u=rw,g=r,o=r'
     owner: root
     group: root
@@ -38,8 +38,8 @@
 - name: Enable Nginx site
   file:
     state: link
-    src: /etc/nginx/sites-available/libertarian-party.com
-    dest: /etc/nginx/sites-enabled/libertarian-party.com
+    src: '/etc/nginx/sites-available/{{ nginx__domain }}'
+    dest: '/etc/nginx/sites-enabled/{{ nginx__domain }}'
     owner: root
     group: root
   notify: Restart Nginx

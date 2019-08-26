@@ -1,3 +1,5 @@
 ---
 nginx__domain: 'example.com'
 nginx__socket: '/var/run/example/example.sock'
+nginx__ssl_cert: '/etc/letsencrypt/live/{{ nginx__domain }}/fullchain.pem'
+nginx__ssl_key: '/etc/letsencrypt/live/{{ nginx__domain }}/privkey.pem'
