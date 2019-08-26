@@ -1,5 +1,5 @@
 ---
-- name: Restart Nginx
+- name: Restart PostgreSQL
   systemd:
     name: postgresql
     state: restarted
