@@ -1,5 +1,5 @@
 ---
-- hosts: partynest-staff.libertarian-party.com
+- hosts: partynest-common.libertarian-party.com
   module_defaults:
     apt:
       force_apt_get: true
@@ -17,6 +17,14 @@
       become_user: postgres
       postgresql_db:
         name: partynest_production
+
+    - name: Create PostgreSQL deploy user
+      become: true
+      become_user: postgres
+      postgresql_user:
+        db: partynest_production
+        name: partynest
+        password: password
 
     - name: Create PostgreSQL staff user
       become: true
