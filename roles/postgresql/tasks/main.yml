@@ -12,3 +12,12 @@
     owner: postgres
     group: postgres
   notify: Restart PostgreSQL
+
+- name: Custom config
+  template:
+    src: templates/postgresql.conf
+    dest: '/etc/postgresql/10/main/conf.d/postgresql.conf'
+    mode: 'u=rw,g=r,o=r'
+    owner: postgres
+    group: postgres
+  notify: Restart PostgreSQL
