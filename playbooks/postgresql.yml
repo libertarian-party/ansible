@@ -16,12 +16,20 @@
       become: true
       become_user: postgres
       postgresql_db:
-        name: '{{ postgresql_db }}'
+        name: partynest_production
 
-    - name: Create PostgreSQL user
+    - name: Create PostgreSQL staff user
       become: true
       become_user: postgres
       postgresql_user:
-        db: '{{ postgresql_db }}'
-        name: '{{ postgresql_user }}'
-        password: '{{ postgresql_password }}'
+        db: partynest_production
+        name: partynest_staff
+        password: staff_password
+
+    - name: Create PostgreSQL public user
+      become: true
+      become_user: postgres
+      postgresql_user:
+        db: partynest_production
+        name: partynest_public
+        password: public_password
