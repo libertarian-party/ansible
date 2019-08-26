@@ -1,0 +1,5 @@
+---
+- name: Install PostgreSQL
+  apt:
+    update_cache: true
+    name: ['postgresql-10', 'python-psycopg2', 'python3-psycopg2']
