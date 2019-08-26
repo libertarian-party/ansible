@@ -3,3 +3,12 @@
   apt:
     update_cache: true
     name: ['postgresql-10', 'python-psycopg2', 'python3-psycopg2']
+
+- name: Host-based authentication config
+  template:
+    src: templates/pg_hba.conf
+    dest: '/etc/postgresql/10/main/pg_hba.conf'
+    mode: 'u=rw,g=r,o='
+    owner: postgres
+    group: postgres
+  notify: Restart PostgreSQL
