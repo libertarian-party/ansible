@@ -17,9 +17,6 @@ private_ipv4_address: 10.135.184.78
 private_ipv4_cidrlen: 16
 private_ipv4_netmask: 255.255.0.0
 
-postgresql_host: 10.135.222.143
-postgresql_user: partynest_public
-
 redis__requirepass: 'c06ef8526383e8e752f069d32f258e4d'
 
 certbot__email: 'kotovalexarian@gmail.com'
