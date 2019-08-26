@@ -14,8 +14,6 @@
       tags: nginx
     - role: ../roles/redis
       tags: redis
-    - role: ../roles/postgresql
-      tags: postgresql
     - role: ../roles/yarn
       tags: yarn
     - role: kotovalexarian.partynest
