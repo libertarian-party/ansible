@@ -23,7 +23,7 @@ certbot__email: 'kotovalexarian@gmail.com'
 certbot__cert_name: 'libertarian-party.com'
 certbot__cert_domains:
   - 'libertarian-party.com'
-  # - 'www.libertarian-party.com'
+  - 'www.libertarian-party.com'
 
 nginx__domain: 'libertarian-party.com'
 nginx__socket: '/opt/partynest/shared/tmp/sockets/puma.sock'
