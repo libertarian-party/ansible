@@ -1,5 +1,5 @@
 ---
-- hosts: partynest-common.libertarian-party.com
+- hosts: postgres.libertarian-party.com
   module_defaults:
     apt:
       force_apt_get: true
