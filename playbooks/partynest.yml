@@ -1,6 +1,5 @@
 ---
-- hosts:
-    - partynest.libertarian-party.com
+- hosts: []
   module_defaults:
     apt:
       force_apt_get: true
