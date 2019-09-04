@@ -1,22 +1,4 @@
 ---
-public_iface:  eth0
-private_iface: eth1
-
-public_ipv4_address: 46.101.132.123
-public_ipv4_gateway: 46.101.128.1
-public_ipv4_cidrlen: 18
-public_ipv4_netmask: 255.255.192.0
-
-public_ipv6_address: 2a03:b0c0:3:d0::79:1
-public_ipv6_gateway: 2a03:b0c0:3:d0::1
-public_ipv6_cidrlen: 124
-public_ipv6_from:    2a03:b0c0:3:d0::79:0
-public_ipv6_to:      2a03:b0c0:3:d0::79:f
-
-private_ipv4_address: 10.135.184.78
-private_ipv4_cidrlen: 16
-private_ipv4_netmask: 255.255.0.0
-
 redis__requirepass: 'c06ef8526383e8e752f069d32f258e4d'
 
 certbot__email: 'kotovalexarian@gmail.com'
