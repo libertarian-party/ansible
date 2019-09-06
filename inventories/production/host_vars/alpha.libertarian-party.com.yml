@@ -1,0 +1,7 @@
+---
+certbot__email: 'kotovalexarian@gmail.com'
+certbot__cert_name: 'alpha.libertarian-party.com'
+certbot__cert_domains:
+  - 'alpha.libertarian-party.com'
+  - 'libertarian-party.com'
+  - 'www.libertarian-party.com'
