@@ -1,15 +1,11 @@
 ---
 - name: Add Certbot APT repository
-  copy:
-    src: files/certbot.list
-    dest: /etc/apt/sources.list.d/certbot.list
-    mode: 'u=rw,g=r,o=r'
-    owner: root
-    group: root
+  apt_repository:
+    repo: ppa:certbot/certbot
+    filename: certbot
 
 - name: Install Certbot
   apt:
-    update_cache: true
     name: certbot
 
 - name: Create directory for Let's Encrypt configuration
