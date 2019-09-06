@@ -1,0 +1,8 @@
+---
+- hosts: all
+  module_defaults:
+    apt:
+      force_apt_get: true
+  roles:
+    - role: ../roles/common
+      tags: common
