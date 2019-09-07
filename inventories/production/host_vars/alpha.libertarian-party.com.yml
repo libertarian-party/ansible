@@ -9,15 +9,15 @@ certbot__cert_domains:
 nginx__remove_default: true
 
 nginx__sites:
-  - type: redirect
-    domain: 'www.libertarian-party.com'
-    redirect_to: 'libertarian-party.com'
+  - type:     redirect
+    domain:   'www.libertarian-party.com'
+    redir_to: 'libertarian-party.com'
     cert:     '/etc/letsencrypt/live/www.libertarian-party.com/fullchain.pem'
     key:      '/etc/letsencrypt/live/www.libertarian-party.com/privkey.pem'
     ssl_conf: '/etc/letsencrypt/options-ssl-nginx.conf'
 
-  - type: xxxxx
-    domain: 'libertarian-party.com'
+  - type:     xxxxx
+    domain:   'libertarian-party.com'
     cert:     '/etc/letsencrypt/live/libertarian-party.com/fullchain.pem'
     key:      '/etc/letsencrypt/live/libertarian-party.com/privkey.pem'
     ssl_conf: '/etc/letsencrypt/options-ssl-nginx.conf'
