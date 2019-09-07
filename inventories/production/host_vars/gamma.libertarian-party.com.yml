@@ -5,3 +5,6 @@ certbot__cert_domains:
   - 'gamma.libertarian-party.com'
 
 nginx__remove_default: true
+nginx__sites:
+  - type: xxxxx
+    domain: 'gamma.libertarian-party.com'

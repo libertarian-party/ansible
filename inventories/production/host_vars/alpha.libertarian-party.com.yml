@@ -7,3 +7,8 @@ certbot__cert_domains:
   - 'www.libertarian-party.com'
 
 nginx__remove_default: true
+nginx__sites:
+  - type: redirect
+    domain: 'www.libertarian-party.com'
+  - type: xxxxx
+    domain: 'libertarian-party.com'
