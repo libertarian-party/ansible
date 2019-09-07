@@ -16,14 +16,14 @@
     - '/etc/nginx/sites-available'
     - '/etc/nginx/sites-enabled'
 
-- name: Disable Nginx default site
+- name: Remove Nginx default site
   file:
     state: absent
     path: '/etc/nginx/sites-enabled/default'
   when: nginx__remove_default | bool
   notify: Restart Nginx
 
-- name: Install Nginx sites config
+- name: Add Nginx sites
   template:
     src: 'templates/{{ item.type }}.conf'
     dest: '/etc/nginx/sites-available/{{ item.domain }}.conf'
@@ -33,11 +33,12 @@
   with_items: '{{ nginx__sites }}'
   notify: Restart Nginx
 
-- name: Enable Nginx site
+- name: Enable Nginx sites
   file:
     state: link
-    src: '/etc/nginx/sites-available/{{ nginx__domain }}'
-    dest: '/etc/nginx/sites-enabled/{{ nginx__domain }}'
+    src: '/etc/nginx/sites-available/{{ item.domain }}.conf'
+    dest: '/etc/nginx/sites-enabled/{{ item.domain }}.conf'
     owner: root
     group: root
+  with_items: '{{ nginx__sites }}'
   notify: Restart Nginx
