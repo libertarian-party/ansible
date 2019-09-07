@@ -6,7 +6,7 @@ certbot__cert_domains:
 
 nginx__remove_default: true
 
-nginx__sites: []
+# nginx__sites:
 #   - type: xxxxx
 #     domain: 'gamma.libertarian-party.com'
 #     cert:     '/etc/letsencrypt/live/gamma.libertarian-party.com/fullchain.pem'

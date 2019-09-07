@@ -1,0 +1,3 @@
+---
+nginx__remove_default: true
+nginx__sites: []
