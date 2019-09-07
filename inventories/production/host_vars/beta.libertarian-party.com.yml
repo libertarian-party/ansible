@@ -3,3 +3,5 @@ certbot__email: 'kotovalexarian@gmail.com'
 certbot__cert_name: 'beta.libertarian-party.com'
 certbot__cert_domains:
   - 'beta.libertarian-party.com'
+
+nginx__remove_default: true

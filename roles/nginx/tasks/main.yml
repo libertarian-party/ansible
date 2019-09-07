@@ -16,6 +16,12 @@
     - '/etc/nginx/sites-available'
     - '/etc/nginx/sites-enabled'
 
+- name: Disable Nginx default site
+  file:
+    state: absent
+    path: '/etc/nginx/sites-enabled/default'
+  when: nginx__remove_default | bool
+
 - name: Install Nginx site config
   template:
     src: templates/example.com.conf

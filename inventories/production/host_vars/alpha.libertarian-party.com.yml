@@ -6,4 +6,4 @@ certbot__cert_domains:
   - 'libertarian-party.com'
   - 'www.libertarian-party.com'
 
-reverse_nginx__domain: 'alpha.libertarian-party.com'
+nginx__remove_default: true
