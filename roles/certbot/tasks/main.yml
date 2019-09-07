@@ -6,7 +6,7 @@
 
 - name: Install Certbot
   apt:
-    name: certbot
+    name: ['certbot', 'python-certbot-nginx']
 
 - name: Create directory for Let's Encrypt configuration
   file:
