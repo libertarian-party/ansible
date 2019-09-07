@@ -3,3 +3,33 @@
   apt:
     update_cache: true
     name: nginx
+
+- name: Create directories for Nginx configuration
+  file:
+    state: directory
+    path: '{{ item }}'
+    mode: 'u=rwx,g=rx,o=rx'
+    owner: root
+    group: root
+  with_items:
+    - '/etc/nginx'
+    - '/etc/nginx/sites-available'
+    - '/etc/nginx/sites-enabled'
+
+- name: Install Nginx site config
+  template:
+    src: templates/example.com.conf
+    dest: '/etc/nginx/sites-available/{{ reverse_nginx__domain }}'
+    mode: 'u=rw,g=r,o=r'
+    owner: root
+    group: root
+  notify: Restart Nginx
+
+- name: Enable Nginx site
+  file:
+    state: link
+    src: '/etc/nginx/sites-available/{{ reverse_nginx__domain }}'
+    dest: '/etc/nginx/sites-enabled/{{ reverse_nginx__domain }}'
+    owner: root
+    group: root
+  notify: Restart Nginx

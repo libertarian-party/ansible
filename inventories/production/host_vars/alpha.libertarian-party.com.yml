@@ -5,3 +5,5 @@ certbot__cert_domains:
   - 'alpha.libertarian-party.com'
   - 'libertarian-party.com'
   - 'www.libertarian-party.com'
+
+reverse_nginx__domain: 'alpha.libertarian-party.com'
