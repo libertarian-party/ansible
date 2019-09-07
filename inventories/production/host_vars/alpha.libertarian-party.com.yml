@@ -16,7 +16,7 @@ nginx__sites:
     key:      '/etc/letsencrypt/live/alpha.libertarian-party.com/privkey.pem'
     ssl_conf: '/etc/letsencrypt/options-ssl-nginx.conf'
 
-  - type:     xxxxx
+  - type:     proxy
     domain:   'libertarian-party.com'
     cert:     '/etc/letsencrypt/live/alpha.libertarian-party.com/fullchain.pem'
     key:      '/etc/letsencrypt/live/alpha.libertarian-party.com/privkey.pem'
