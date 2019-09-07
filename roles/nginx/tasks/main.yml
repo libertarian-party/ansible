@@ -21,11 +21,12 @@
     state: absent
     path: '/etc/nginx/sites-enabled/default'
   when: nginx__remove_default | bool
+  notify: Restart Nginx
 
 - name: Install Nginx sites config
   template:
-    src: 'templates/{{ type }}.conf'
-    dest: '/etc/nginx/sites-available/{{ domain }}.conf'
+    src: 'templates/{{ item.type }}.conf'
+    dest: '/etc/nginx/sites-available/{{ item.domain }}.conf'
     mode: 'u=rw,g=r,o=r'
     owner: root
     group: root

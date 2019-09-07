@@ -11,6 +11,7 @@ nginx__remove_default: true
 nginx__sites:
   - type: redirect
     domain: 'www.libertarian-party.com'
+    redirect_to: 'libertarian-party.com'
     cert:     '/etc/letsencrypt/live/www.libertarian-party.com/fullchain.pem'
     key:      '/etc/letsencrypt/live/www.libertarian-party.com/privkey.pem'
     ssl_conf: '/etc/letsencrypt/options-ssl-nginx.conf'
