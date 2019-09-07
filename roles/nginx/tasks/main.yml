@@ -22,13 +22,14 @@
     path: '/etc/nginx/sites-enabled/default'
   when: nginx__remove_default | bool
 
-- name: Install Nginx site config
+- name: Install Nginx sites config
   template:
-    src: templates/example.com.conf
-    dest: '/etc/nginx/sites-available/{{ nginx__domain }}'
+    src: 'templates/{{ type }}.conf'
+    dest: '/etc/nginx/sites-available/{{ domain }}.conf'
     mode: 'u=rw,g=r,o=r'
     owner: root
     group: root
+  with_items: '{{ nginx__sites }}'
   notify: Restart Nginx
 
 - name: Enable Nginx site

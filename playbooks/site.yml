@@ -8,11 +8,5 @@
       tags: common
     - role: ../roles/certbot
       tags: certbot
-
-- hosts: alpha.libertarian-party.com
-  module_defaults:
-    apt:
-      force_apt_get: true
-  roles:
-    - role: ../roles/reverse_nginx
-      tags: reverse_nginx
+    - role: ../roles/nginx
+      tags: nginx
