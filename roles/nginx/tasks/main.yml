@@ -19,7 +19,7 @@
 - name: Install Nginx site config
   template:
     src: templates/example.com.conf
-    dest: '/etc/nginx/sites-available/{{ reverse_nginx__domain }}'
+    dest: '/etc/nginx/sites-available/{{ nginx__domain }}'
     mode: 'u=rw,g=r,o=r'
     owner: root
     group: root
@@ -28,8 +28,8 @@
 - name: Enable Nginx site
   file:
     state: link
-    src: '/etc/nginx/sites-available/{{ reverse_nginx__domain }}'
-    dest: '/etc/nginx/sites-enabled/{{ reverse_nginx__domain }}'
+    src: '/etc/nginx/sites-available/{{ nginx__domain }}'
+    dest: '/etc/nginx/sites-enabled/{{ nginx__domain }}'
     owner: root
     group: root
   notify: Restart Nginx
