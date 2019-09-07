@@ -13,18 +13,8 @@
     group: root
   with_items:
     - '/etc/nginx'
-    - '/etc/nginx/certs'
     - '/etc/nginx/sites-available'
     - '/etc/nginx/sites-enabled'
-
-- name: Download CloudFlare client certificate
-  get_url:
-    url: 'https://support.cloudflare.com/hc/en-us/article_attachments/201243967/origin-pull-ca.pem'
-    checksum: 'sha256:c07f93a4866af4b14367b207f54154ea05629e52db8e333cc814fdec03ca3cf7'
-    dest: '/etc/nginx/certs/cloudflare-origin-pull-ca.pem'
-    mode: 'u=rw,g=r,o=r'
-    owner: root
-    group: root
 
 - name: Install Nginx site config
   template:
