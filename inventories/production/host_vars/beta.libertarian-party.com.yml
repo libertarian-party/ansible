@@ -7,7 +7,7 @@ certbot__cert_domains:
 nginx__remove_default: true
 
 nginx__sites:
-  - type:     xxxxx
+  - type:     origin
     domain:   'beta.libertarian-party.com'
     cert:     '/etc/letsencrypt/live/beta.libertarian-party.com/fullchain.pem'
     key:      '/etc/letsencrypt/live/beta.libertarian-party.com/privkey.pem'
