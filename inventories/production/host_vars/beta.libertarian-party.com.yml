@@ -6,9 +6,15 @@ certbot__cert_domains:
 
 nginx__remove_default: true
 
+nginx__upstreams:
+  - name: partynest
+    servers: ['unix:/opt/partynest/shared/tmp/sockets/puma.sock']
+
 nginx__sites:
   - type:     origin
     domain:   'beta.libertarian-party.com'
     cert:     '/etc/letsencrypt/live/beta.libertarian-party.com/fullchain.pem'
     key:      '/etc/letsencrypt/live/beta.libertarian-party.com/privkey.pem'
     ssl_conf: '/etc/letsencrypt/options-ssl-nginx.conf'
+    root:     '/opt/partynest/shared/public'
+    upstream: partynest
