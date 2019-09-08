@@ -20,8 +20,6 @@
     apt:
       force_apt_get: true
   roles:
-    - role: ../roles/redis
-      tags: redis
     - role: ../roles/yarn
       tags: yarn
     - role: kotovalexarian.partynest
