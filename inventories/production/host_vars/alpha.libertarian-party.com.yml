@@ -8,6 +8,12 @@ certbot__cert_domains:
 
 nginx__remove_default: true
 
+nginx__upstreams:
+  - name: partynest_general
+    servers: ['beta.libertarian-party.com:443']
+  - name: partynest_staff
+    servers: ['gamma.libertarian-party.com:443']
+
 nginx__sites:
   - type:     redirect
     domain:   'www.libertarian-party.com'
