@@ -1,0 +1,4 @@
+---
+iptables__conf_dir: '/etc/iptables'
+iptables__conf_ipv4: '{{ iptables__conf_dir }}/rules.v4'
+iptables__conf_ipv6: '{{ iptables__conf_dir }}/rules.v6'

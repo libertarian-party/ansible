@@ -1,0 +1,6 @@
+---
+- name: Load iptables rules for IPv4
+  shell: 'cat {{ iptables__conf_ipv4 }} | iptables-restore'
+
+- name: Load iptables rules for IPv6
+  shell: 'cat {{ iptables__conf_ipv6 }} | ip6tables-restore'
