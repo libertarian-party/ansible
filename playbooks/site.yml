@@ -12,3 +12,20 @@
       tags: certbot
     - role: ../roles/nginx
       tags: nginx
+
+- hosts:
+    - beta.libertarian-party.com
+    - gamma.libertarian-party.com
+  module_defaults:
+    apt:
+      force_apt_get: true
+  roles:
+    - role: ../roles/redis
+      tags: redis
+    - role: ../roles/yarn
+      tags: yarn
+    - role: kotovalexarian.partynest
+      tags: partynest
+      vars:
+        partynest__postgresql_host: '{{ postgresql_host }}'
+        partynest__postgresql_user: '{{ postgresql_user }}'
