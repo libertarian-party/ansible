@@ -24,7 +24,9 @@ nginx__sites:
 
   - type:     proxy
     domain:   'libertarian-party.com'
-    upstream: 'origin'
     cert:     '/etc/letsencrypt/live/alpha.libertarian-party.com/fullchain.pem'
     key:      '/etc/letsencrypt/live/alpha.libertarian-party.com/privkey.pem'
     ssl_conf: '/etc/letsencrypt/options-ssl-nginx.conf'
+    clnt_ca:  '/home/kotovalexarian/ca.crt'
+    no_crt:   partynest_general
+    with_crt: partynest_staff
