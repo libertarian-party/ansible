@@ -33,7 +33,7 @@
 -A OUTPUT -j DROP -p icmpv6
 
 # Allow incoming SSH.
--A INPUT  -j ACCEPT -p tcp -m conntrack --ctstate NEW,ESTABLISHED --dport 22
--A OUTPUT -j ACCEPT -p tcp -m conntrack --ctstate ESTABLISHED     --sport 22
+-A INPUT  -j ACCEPT --dport 22 -p tcp -m conntrack --ctstate NEW,ESTABLISHED
+-A OUTPUT -j ACCEPT --sport 22 -p tcp -m conntrack --ctstate ESTABLISHED
 
 COMMIT
