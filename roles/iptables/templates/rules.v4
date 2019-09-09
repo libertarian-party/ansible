@@ -2,9 +2,9 @@
 *filter
 ########
 
-:INPUT   ACCEPT [0:0]
-:FORWARD DROP   [0:0]
-:OUTPUT  ACCEPT [0:0]
+:INPUT   DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT  DROP [0:0]
 
 # Allow all loopback (lo) traffic and reject anything
 # to localhost that does not originate from lo.
