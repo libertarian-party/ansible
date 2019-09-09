@@ -22,7 +22,7 @@
     state: absent
     path: '/etc/nginx/sites-enabled/default'
   when: nginx__remove_default | bool
-  notify: Restart Nginx
+  notify: nginx | Restart Nginx
 
 - name: Add Nginx upstreams
   template:
@@ -32,7 +32,7 @@
     owner: root
     group: root
   with_items: '{{ nginx__upstreams }}'
-  notify: Restart Nginx
+  notify: nginx | Restart Nginx
 
 - name: Add Nginx sites
   template:
@@ -42,7 +42,7 @@
     owner: root
     group: root
   with_items: '{{ nginx__sites }}'
-  notify: Restart Nginx
+  notify: nginx | Restart Nginx
 
 - name: Enable Nginx sites
   file:
@@ -52,4 +52,4 @@
     owner: root
     group: root
   with_items: '{{ nginx__sites }}'
-  notify: Restart Nginx
+  notify: nginx | Restart Nginx

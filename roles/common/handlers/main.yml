@@ -1,5 +1,5 @@
 ---
-- name: Restart SSH daemon
+- name: common | Restart SSH daemon
   systemd:
     daemon_reload: true
     name: sshd
