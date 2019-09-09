@@ -6,7 +6,7 @@
 - name: Create directory for iptables configuration
   file:
     state: directory
-    path: '{{ iptables__conf_dir }}'
+    path: '{{ security__conf_dir }}'
     mode: 'u=rwx,g=rx,o=rx'
     owner: root
     group: root
@@ -14,17 +14,17 @@
 - name: Install iptables rules for IPv4
   template:
     src: templates/rules.v4
-    dest: '{{ iptables__conf_ipv4 }}'
+    dest: '{{ security__conf_ipv4 }}'
     mode: 'u=rw,g=r,o=r'
     owner: root
     group: root
-  notify: iptables | Load rules for IPv4
+  notify: security | Load rules for IPv4
 
 - name: Install iptables rules for IPv6
   template:
     src: templates/rules.v6
-    dest: '{{ iptables__conf_ipv6 }}'
+    dest: '{{ security__conf_ipv6 }}'
     mode: 'u=rw,g=r,o=r'
     owner: root
     group: root
-  notify: iptables | Load rules for IPv6
+  notify: security | Load rules for IPv6

@@ -6,8 +6,8 @@
   roles:
     - role: ../roles/common
       tags: common
-    - role: ../roles/iptables
-      tags: iptables
+    - role: ../roles/security
+      tags: security
     - role: ../roles/certbot
       tags: certbot
     - role: ../roles/nginx
