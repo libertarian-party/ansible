@@ -25,7 +25,7 @@
     group: root
 
 - name: Install Nginx SSL options
-  file:
+  copy:
     src: files/options-ssl-nginx.conf
     dest: /etc/letsencrypt/options-ssl-nginx.conf
     mode: 'u=rw,g=r,o=r'
