@@ -24,6 +24,14 @@
     owner: root
     group: root
 
+- name: Install Nginx SSL options
+  file:
+    src: files/options-ssl-nginx.conf
+    dest: /etc/letsencrypt/options-ssl-nginx.conf
+    mode: 'u=rw,g=r,o=r'
+    owner: root
+    group: root
+
 - name: Obtain Let's Encrypt certificate
   command: 'certbot certonly'
   register: certbot__result
