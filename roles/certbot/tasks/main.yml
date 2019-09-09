@@ -25,7 +25,7 @@
     group: root
 
 - name: Obtain Let's Encrypt certificate
-  command: 'certbot certonly'
+  command: 'certbot certonly --nginx'
   register: certbot__result
   changed_when: >-
     certbot__result.stdout is
