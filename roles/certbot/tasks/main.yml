@@ -6,7 +6,7 @@
 
 - name: Install Certbot
   apt:
-    name: ['certbot', 'python-certbot-nginx']
+    name: certbot
 
 - name: Create directory for Let's Encrypt configuration
   file:
@@ -25,7 +25,7 @@
     group: root
 
 - name: Obtain Let's Encrypt certificate
-  command: 'certbot certonly --nginx'
+  command: 'certbot certonly'
   register: certbot__result
   changed_when: >-
     certbot__result.stdout is
