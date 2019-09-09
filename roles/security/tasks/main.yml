@@ -18,7 +18,7 @@
     mode: 'u=rw,g=r,o=r'
     owner: root
     group: root
-  notify: security | Load rules for IPv4
+  notify: security | Load iptables rules for IPv4
 
 - name: Install iptables rules for IPv6
   template:
@@ -27,4 +27,4 @@
     mode: 'u=rw,g=r,o=r'
     owner: root
     group: root
-  notify: security | Load rules for IPv6
+  notify: security | Load iptables rules for IPv6
