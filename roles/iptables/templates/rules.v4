@@ -6,6 +6,11 @@
 :FORWARD DROP [0:0]
 :OUTPUT  DROP [0:0]
 
+# Remove all rules from all chains,
+# delete all user-defined chains.
+-F
+-X
+
 # Allow all loopback (lo) traffic and reject anything
 # to localhost that does not originate from lo.
 -A INPUT   -i lo                -j ACCEPT
