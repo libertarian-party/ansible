@@ -6,6 +6,10 @@
     line: '{{ item.line }}'
   notify: common | Restart SSH daemon
   with_items:
+    - regexp: '^#?AcceptEnv '
+      line:   'AcceptEnv LANG LC_* RAILS_ENV'
+    - regexp: '^#?PermitUserEnvironment '
+      line:   'PermitUserEnvironment no'
     - regexp: '^#?PermitRootLogin '
       line:   'PermitRootLogin no'
     - regexp: '^#?MaxAuthTries '
