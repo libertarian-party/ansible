@@ -1,5 +1,6 @@
 ---
 partynest__deploy_user: kotovalexarian
+partynest__domain: libertarian-party.com
 partynest__env: production
 
 partynest__pg_db: partynest_production
