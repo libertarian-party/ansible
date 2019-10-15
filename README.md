@@ -11,8 +11,29 @@
 
 * [Обзор](#конфигурация-ansible)
 * [Содержание](#содержание)
+* [Именование серверов](#именование-серверов)
 * [Подготовка](#подготовка)
 * [Использование](#использование)
+
+
+
+Именование серверов
+-------------------
+
+Идентификация серверов производится с помощью `A` и `AAAA` записей DNS.
+В качестве имён используются английские наименования греческих букв, например:
+
+* `alpha.libertarian-party.com`
+* `beta.libertarian-party.com`
+* `gamma.libertarian-party.com`
+* `delta.libertarian-party.com`
+
+Для именования логических доменных имён используются `CNAME` записи DNS,
+которые указывают на один из идентификаторов серверов:
+
+* `libertarian-party.com` -> `alpha.libertarian-party.com`
+* `www.libertarian-party.com` -> `alpha.libertarian-party.com`
+* `stg.libertarian-party.com` -> `delta.libertarian-party.com`
 
 
 
