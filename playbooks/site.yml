@@ -18,7 +18,5 @@
     apt:
       force_apt_get: true
   roles:
-    - role: ../roles/yarn
-      tags: yarn
     - role: kotovalexarian.partynest
       tags: partynest
