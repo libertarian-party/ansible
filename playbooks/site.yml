@@ -13,9 +13,7 @@
     - role: ../roles/nginx
       tags: nginx
 
-- hosts:
-    - beta.libertarian-party.com
-    - gamma.libertarian-party.com
+- hosts: web
   module_defaults:
     apt:
       force_apt_get: true
