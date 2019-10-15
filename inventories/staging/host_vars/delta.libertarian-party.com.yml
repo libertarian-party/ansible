@@ -24,7 +24,7 @@ nginx__upstreams:
 
 nginx__sites:
   - type:     origin
-    domain:   'delta.libertarian-party.com'
+    domain:   'stg.libertarian-party.com'
     cert:     '/etc/letsencrypt/live/delta.libertarian-party.com/fullchain.pem'
     key:      '/etc/letsencrypt/live/delta.libertarian-party.com/privkey.pem'
     ssl_conf: '/etc/letsencrypt/options-ssl-nginx.conf'
