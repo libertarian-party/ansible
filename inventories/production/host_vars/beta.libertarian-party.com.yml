@@ -31,8 +31,6 @@ nginx__sites:
     upstream: partynest
 
 partynest__restrict: true
-
-partynest__pg_db: partynest_production
 partynest__pg_user: doadmin
 
 partynest__pg_pass: !vault |
