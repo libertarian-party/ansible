@@ -1,0 +1,7 @@
+delta.libertarian-party.com
+
+[web]
+delta.libertarian-party.com
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3

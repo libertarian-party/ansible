@@ -1,0 +1,34 @@
+---
+ansible_become_pass: !vault |
+  $ANSIBLE_VAULT;1.1;AES256
+  38646139353035643264383466313862303062623731373837616162323866653135613831663134
+  6339333637666533316636653936393330376232363263320a623062383465663661656231646138
+  33353637376435613462363030346566333635343533366533363432663535353432316333323830
+  3666303239393537320a313366366634343430626262396337376664323430323839336562303432
+  32326634646236616366316130626565303839386263616537353437326264323735303066323066
+  61396261633636646231373431376665653734346364303566613939643361356164333738353261
+  36613366626365663535373135316332353061363431376134663661303136656163656664313730
+  39353130346132636463
+
+certbot__email: 'kotovalexarian@gmail.com'
+certbot__cert_name: 'delta.libertarian-party.com'
+certbot__cert_domains:
+  - 'delta.libertarian-party.com'
+  - 'stg.libertarian-party.com'
+
+nginx__remove_default: true
+
+nginx__upstreams:
+  - name: partynest
+    servers: ['unix:/opt/partynest/shared/tmp/sockets/puma.sock']
+
+nginx__sites:
+  - type:     origin
+    domain:   'delta.libertarian-party.com'
+    cert:     '/etc/letsencrypt/live/delta.libertarian-party.com/fullchain.pem'
+    key:      '/etc/letsencrypt/live/delta.libertarian-party.com/privkey.pem'
+    ssl_conf: '/etc/letsencrypt/options-ssl-nginx.conf'
+    root:     '/opt/partynest/shared/public'
+    upstream: partynest
+
+partynest__restrict: false
