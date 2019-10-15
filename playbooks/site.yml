@@ -13,7 +13,7 @@
     - role: ../roles/nginx
       tags: nginx
 
-- hosts: web
+- hosts: partynest
   module_defaults:
     apt:
       force_apt_get: true
