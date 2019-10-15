@@ -84,20 +84,24 @@ ansible-galaxy install -r requirements.yml -f
 Использование конфигурации
 --------------------------
 
+Примеры команд даны для среды `production`. Для выполнения команд для среды
+`staging` замените `-i inventories/production/` на `-i inventories/staging/`.
+Можно опустить этот аргумент, по умолчанию используется среда `production`.
+
 Перезагрузка всех серверов:
 
 ```
-ansible all -m reboot
+ansible all -i inventories/production/ -m reboot
 ```
 
 Обновление системных пакетов на всех серверах:
 
 ```
-ansible all -m apt -a 'update_cache=yes upgrade=yes'
+ansible all -i inventories/production/ -m apt -a 'update_cache=yes upgrade=yes'
 ```
 
 Развёртывание всей инфраструктуры:
 
 ```
-ansible-playbook playbooks/site.yml
+ansible-playbook -i inventories/production/ playbooks/site.yml
 ```
