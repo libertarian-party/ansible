@@ -32,9 +32,14 @@
 Для именования логических доменных имён используются `CNAME` записи DNS,
 которые указывают на один из идентификаторов серверов:
 
-* `libertarian-party.com` -> `alpha.libertarian-party.com`
 * `www.libertarian-party.com` -> `alpha.libertarian-party.com`
 * `stg.libertarian-party.com` -> `delta.libertarian-party.com`
+
+Единственное логическое доменное имя, которое не использует `CNAME` записи DNS -
+это `@` (например, `libertarian-party.com`), потому что это технически
+невозможно. Для этого доменного имени используйте `A` и `AAAA` записи DNS,
+дублирующие соответствующий идентификатор сервера
+(например, `alpha.libertarian-party.com`).
 
 
 
