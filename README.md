@@ -19,6 +19,15 @@
 Подготовка
 ----------
 
+Для ускорения работы Ansible используется библиотека
+[Mitogen](https://mitogen.networkgenomics.com/). Необходимо установить её
+в директорию `vendor`:
+
+```
+wget -O vendor/mitogen-0.2.8.tar.gz https://networkgenomics.com/try/mitogen-0.2.8.tar.gz
+tar -xzf vendor/mitogen-0.2.8.tar.gz -C vendor/
+```
+
 Конфигурация зависит от ролей Ansible, указанных в файле `requirements.yml`.
 Следующую команду нужно запускать перед началом работы с конфигурацией,
 а также после добавления ролей или изменения их версий:

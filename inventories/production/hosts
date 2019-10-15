@@ -1,3 +1,6 @@
 alpha.libertarian-party.com
 beta.libertarian-party.com
 gamma.libertarian-party.com
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
