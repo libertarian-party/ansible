@@ -10,7 +10,6 @@ ansible_become_pass: !vault |
   65343466363833373764303931656137636234663531643164646535333766666138396265646536
   65363836633063393039
 
-certbot__email: 'kotovalexarian@gmail.com'
 certbot__cert_name: 'beta.libertarian-party.com'
 certbot__cert_domains:
   - 'beta.libertarian-party.com'
