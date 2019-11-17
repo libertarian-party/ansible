@@ -1,2 +1,4 @@
 ---
 ansible_python_interpreter: /usr/bin/python3
+certbot__post_hook: 'systemctl is-active nginx.service || systemctl start nginx.service'
+certbot__pre_hook:  'systemctl is-active nginx.service && systemctl stop  nginx.service'
