@@ -14,13 +14,13 @@ certbot__cert_name: 'gamma.libertarian-party.com'
 certbot__cert_domains:
   - 'gamma.libertarian-party.com'
 
-nginx__remove_default: true
+common__nginx__remove_default: true
 
-nginx__upstreams:
+common__nginx__upstreams:
   - name: partynest
     servers: ['unix:/opt/partynest/shared/tmp/sockets/puma.sock']
 
-nginx__sites:
+common__nginx__sites:
   - type:     origin
     domain:   'gamma.libertarian-party.com'
     cert:     '/etc/letsencrypt/live/gamma.libertarian-party.com/fullchain.pem'

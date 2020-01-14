@@ -1,4 +1,0 @@
----
-nginx__remove_default: true
-nginx__upstreams: []
-nginx__sites: []

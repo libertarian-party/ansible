@@ -1,5 +1,5 @@
 ---
 - src: kotovalexarian.common
-  version: v0.0.2
+  version: v0.0.4
 - src: kotovalexarian.partynest
   version: v0.0.16

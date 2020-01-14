@@ -15,13 +15,13 @@ certbot__cert_domains:
   - 'delta.libertarian-party.com'
   - 'stg.libertarian-party.com'
 
-nginx__remove_default: true
+common__nginx__remove_default: true
 
-nginx__upstreams:
+common__nginx__upstreams:
   - name: partynest
     servers: ['unix:/opt/partynest/shared/tmp/sockets/puma.sock']
 
-nginx__sites:
+common__nginx__sites:
   - type:     origin
     domain:   'stg.libertarian-party.com'
     cert:     '/etc/letsencrypt/live/delta.libertarian-party.com/fullchain.pem'
