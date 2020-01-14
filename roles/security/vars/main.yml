@@ -1,4 +1,0 @@
----
-security__conf_dir: '/etc/iptables'
-security__conf_ipv4: '{{ security__conf_dir }}/rules.v4'
-security__conf_ipv6: '{{ security__conf_dir }}/rules.v6'
