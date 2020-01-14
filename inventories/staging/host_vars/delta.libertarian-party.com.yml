@@ -10,8 +10,8 @@ ansible_become_pass: !vault |
   36613366626365663535373135316332353061363431376134663661303136656163656664313730
   39353130346132636463
 
-certbot__cert_name: 'delta.libertarian-party.com'
-certbot__cert_domains:
+common__certbot__cert_name: 'delta.libertarian-party.com'
+common__certbot__cert_domains:
   - 'delta.libertarian-party.com'
   - 'stg.libertarian-party.com'
 

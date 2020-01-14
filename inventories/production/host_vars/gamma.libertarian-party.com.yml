@@ -10,8 +10,8 @@ ansible_become_pass: !vault |
   30396439393238386430393337336364646666653430363932323632386262383263353238616234
   39373637636265623935
 
-certbot__cert_name: 'gamma.libertarian-party.com'
-certbot__cert_domains:
+common__certbot__cert_name: 'gamma.libertarian-party.com'
+common__certbot__cert_domains:
   - 'gamma.libertarian-party.com'
 
 common__nginx__remove_default: true

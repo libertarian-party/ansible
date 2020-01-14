@@ -10,8 +10,8 @@ ansible_become_pass: !vault |
   64653266316634313431613232633561613963373831336563623961363163386135663235356534
   32396663343330633962
 
-certbot__cert_name: 'alpha.libertarian-party.com'
-certbot__cert_domains:
+common__certbot__cert_name: 'alpha.libertarian-party.com'
+common__certbot__cert_domains:
   - 'alpha.libertarian-party.com'
   - 'libertarian-party.com'
   - 'www.libertarian-party.com'

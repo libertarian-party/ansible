@@ -6,8 +6,6 @@
   roles:
     - role: kotovalexarian.common
       tags: common
-    - role: ../roles/certbot
-      tags: certbot
     - role: ../roles/nginx
       tags: nginx
 
