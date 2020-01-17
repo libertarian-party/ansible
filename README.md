@@ -108,7 +108,7 @@ ansible all -i inventories/production/ -m apt -a 'update_cache=yes upgrade=yes'
 Показать пароль пользователя для каждого сервера:
 
 ```
-ansible all -i inventories/production/ -m debug -a "msg='{{ ansible_become_pass }}'"
+ansible all -i inventories/production/ -m debug -a var=ansible_become_pass
 ```
 
 Развёртывание всей инфраструктуры:
