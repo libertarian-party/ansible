@@ -1,4 +1,28 @@
 ---
+rails__deploy_user: kotovalexarian
+rails__user: partynest
+rails__group: partynest
+rails__root_dir: '/opt/partynest'
+rails__service: partynest
+rails__rvm: '/usr/local/rvm/bin/rvm'
+rails__ruby: ruby-2.7.0
+rails__gemset: partynest
+rails__env: production
+
+rails__env_vars:
+  POSTGRES_POOL: 5
+  POSTGRES_HOST: 'private-db-postgresql-ams3-63609-do-user-4455684-0.db.ondigitalocean.com'
+  POSTGRES_PORT: 25060
+  POSTGRES_USER: 'partynest'
+  POSTGRES_DB: 'partynest_production'
+  POSTGRES_PASSWORD: !vault |
+    $ANSIBLE_VAULT;1.1;AES256
+    64643035646436663161646136626366353835333763653236616233333637313162333837393833
+    3963306331386533346533363461356436316132373565380a656336353431336238646230343366
+    38316637623465626636333837306665656538393536666237323763633963653166663135393038
+    3035653831623931640a303838343266343462626330633530393562623061303436323738313064
+    30393564393132626235386661343138373836333239356639656339333664333164
+
 rvm1_rvm_version: stable
 rvm1_rvm_check_for_updates: true
 rvm1_install_path: '/usr/local/rvm'
@@ -6,15 +30,6 @@ rvm1_install_flags: '--auto-dotfiles'
 rvm1_user: root
 rvm1_rubies: ['ruby-2.7.0']
 rvm1_bundler_install: false
-
-partynest__env: production
-partynest__domain: libertarian-party.com
-
-partynest__deploy_user: kotovalexarian
-
-partynest__pg_db: partynest_production
-partynest__pg_host: private-db-postgresql-ams3-63609-do-user-4455684-0.db.ondigitalocean.com
-partynest__pg_port: 25060
 
 partynest__redis_db_cache: 1
 partynest__redis_db_sidekiq: 0
