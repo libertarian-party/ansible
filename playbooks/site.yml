@@ -3,16 +3,17 @@
   module_defaults:
     apt:
       force_apt_get: true
+      update_cache: true
+      cache_valid_time: 86400
   roles:
-    - role: kotovalexarian.common
-      tags: common
-    - role: ../roles/nginx
-      tags: nginx
+    - kotovalexarian.common
 
 - hosts: partynest
   module_defaults:
     apt:
       force_apt_get: true
+      update_cache: true
+      cache_valid_time: 86400
   roles:
-    - role: kotovalexarian.partynest
-      tags: partynest
+    - rvm.ruby
+    - kotovalexarian.rails
