@@ -16,8 +16,6 @@ common__certbot__cert_domains:
   - 'libertarian-party.com'
   - 'www.libertarian-party.com'
 
-common__nginx__remove_default: true
-
 common__nginx__upstreams:
   - name: partynest_general
     servers: ['beta.libertarian-party.com:443']

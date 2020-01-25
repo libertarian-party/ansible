@@ -14,8 +14,6 @@ common__certbot__cert_name: 'beta.libertarian-party.com'
 common__certbot__cert_domains:
   - 'beta.libertarian-party.com'
 
-common__nginx__remove_default: true
-
 common__nginx__upstreams:
   - name: partynest
     servers: ['unix:/opt/partynest/shared/tmp/sockets/puma.sock']
