@@ -26,6 +26,7 @@ common__nginx__sites:
     ssl_conf: '/etc/letsencrypt/options-ssl-nginx.conf'
     root:     '/opt/partynest/shared/public'
     upstream: partynest
+    external: false
 
 partynest__restrict: true
 partynest__pg_user: doadmin
