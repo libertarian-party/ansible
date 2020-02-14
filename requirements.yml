@@ -4,4 +4,4 @@
 - src: rvm.ruby
   version: v2.1.2
 - src: kotovalexarian.rails
-  version: v0.0.23
+  version: v0.0.24
