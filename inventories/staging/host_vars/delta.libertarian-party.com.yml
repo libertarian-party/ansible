@@ -29,7 +29,6 @@ common__nginx__sites:
     upstream: partynest
     external: true
 
-partynest__restrict: false
 partynest__pg_user: doadmin
 
 partynest__pg_pass: !vault |
