@@ -17,3 +17,11 @@
   roles:
     - rvm.ruby
     - kotovalexarian.rails
+  tasks:
+    - name: Copy master encryption key
+      copy:
+        src: ../files/master.key
+        dest: '{{ rails__root_dir }}/shared/config/master.key'
+        owner: '{{ rails__deploy_user }}'
+        group: '{{ rails__group }}'
+        mode: 'u=rw,g=rw,o='
